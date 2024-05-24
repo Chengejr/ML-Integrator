@@ -1,24 +1,12 @@
-// src/components/EducationalResources.js
-import React, { useContext, useEffect } from 'react';
-import { GlobalContext } from '../context/GlobalState';
+import React from 'react';
 
 const EducationalResources = () => {
-  const { state, fetchResources } = useContext(GlobalContext);
-
-  useEffect(() => {
-    fetchResources();
-  }, [fetchResources]);
-
   return (
     <div>
       <h1>Educational Resources</h1>
-      <ul>
-        {state.resources.map(resource => (
-          <li key={resource.id}>{resource.name}</li>
-        ))}
-      </ul>
+      <p>This is the educational resources page.</p>
     </div>
   );
-};
+}
 
 export default EducationalResources;
