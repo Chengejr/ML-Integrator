@@ -1,13 +1,13 @@
+// src/index.js
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { GlobalProvider } from './context/GlobalState';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = createRoot(document.getElementById('root'));
-
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
@@ -22,4 +22,3 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-

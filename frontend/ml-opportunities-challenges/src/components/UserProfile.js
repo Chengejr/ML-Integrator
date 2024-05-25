@@ -1,11 +1,14 @@
-// src/components/UserProfile.js
 import React from 'react';
 
-const UserProfile = () => {
+const UserProfile = ({ user }) => {
   return (
     <div>
-      <h1>User Profile</h1>
-      <p>Manage your profile and settings here.</p>
+      {user && (
+        <div>
+          <p>Name: {user.name}</p>
+          {/* Add other user details here */}
+        </div>
+      )}
     </div>
   );
 };

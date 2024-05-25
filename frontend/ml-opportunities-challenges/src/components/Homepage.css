@@ -1,0 +1,18 @@
+/* src/components/Homepage.css */
+.home {
+    text-align: center;
+    padding: 50px;
+    background-image: url('path/to/your/background-image.jpg'); /* Update this with the actual path to your background image */
+    background-size: cover;
+    color: white;
+  }
+  
+  .home h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .home p {
+    font-size: 1.5em;
+  }
+  
