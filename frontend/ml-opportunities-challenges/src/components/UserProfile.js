@@ -1,14 +1,12 @@
 import React from 'react';
 
 const UserProfile = ({ user }) => {
+
+  const { name = 'Unknown User', bio = 'No bio available' } = user || {};
   return (
     <div>
-      {user && (
-        <div>
-          <p>Name: {user.name}</p>
-          {/* Add other user details here */}
-        </div>
-      )}
+      <h2>{user.name}</h2>
+      <p>{user.bio}</p>
     </div>
   );
 };

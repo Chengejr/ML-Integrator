@@ -3,13 +3,9 @@ import React from 'react';
 const Comment = ({ comment }) => {
   return (
     <div>
-      {comment && (
-        <div>
-          <p>{comment.content}</p>
-          <p>Author: {comment.author}</p>
-          <p>Date: {comment.date}</p>
-        </div>
-      )}
+      <p>{comment.content}</p>
+      <p>Author: {comment.author.name}</p>
+      <p>Date: {new Date(comment.date_posted).toLocaleString()}</p>
     </div>
   );
 };
