@@ -1,0 +1,13 @@
+Django==4.2.12
+djangorestframework==3.13.1
+psycopg2==2.9.3
+django-cors-headers==3.11.0
+python-dotenv==0.19.2
+
+# Testing tools
+pytest==6.2.5
+pytest-django==4.5.2
+
+# Linting and formatting
+pylint==2.12.2
+black==21.12b0
