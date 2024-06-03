@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/profile" element={<UserProfile />} />
-          <Route path="/forum" element={<CommunityForum />} />
+          <Route path="/forum/*" element={<CommunityForum />} />
           <Route path="/resources" element={<EducationalResources />} />
         </Routes>
       </main>
@@ -26,4 +26,3 @@ function App() {
 }
 
 export default App;
-

@@ -1,4 +1,6 @@
+// src/components/CommunityForum.js
 import React from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
 import ForumPostList from './ForumPostList';
 import ForumPost from './ForumPost';
 import CommentList from './CommentList';
@@ -6,44 +8,39 @@ import UserProfile from './UserProfile';
 import Comment from './Comment';
 
 const CommunityForum = () => {
-  // Assuming you have data for posts, comments, and user profile
   const posts = [
-    { id: 1, title: 'First Post', content: 'This is the first post.', author: { name: 'John Doe' }, date_posted: '2024-05-28T12:00:00Z' },
-    { id: 2, title: 'Second Post', content: 'This is the second post.', author: { name: 'Jane Smith' }, date_posted: '2024-05-29T12:00:00Z' }
-               ]; // Array of post objects
-  const comments = [{ id: 1, content: 'This is the first comment.', author: { name: 'Alice' }, date_posted: '2024-05-28T13:00:00Z' },
-                { id: 2, content: 'This is the second comment.', author: { name: 'Bob' }, date_posted: '2024-05-29T14:00:00Z' }
-                ]; // Array of comment objects
-  const userProfile = {name: 'User Name', bio: 'User bio goes here.'}; // User profile object
-
-  console.log('Posts:', posts);
-  console.log('Comments:', comments);
-  console.log('UserProfile:', userProfile);
-
+    { id: 1, title: 'First Post', content: 'This is the first post content', author: { name: 'Author1' }, date_posted: '2023-06-01T12:00:00Z' },
+    { id: 2, title: 'Second Post', content: 'This is the second post content', author: { name: 'Author2' }, date_posted: '2023-06-02T12:00:00Z' }
+  ];
   
+  const comments = [
+    { id: 1, content: 'First comment', author: { name: 'Commenter1' }, date_commented: '2023-06-01T12:00:00Z' },
+    { id: 2, content: 'Second comment', author: { name: 'Commenter2' }, date_commented: '2023-06-02T12:00:00Z' }
+  ];
+
+  const userProfile = { name: 'John Doe', email: 'john.doe@example.com', joined: '2023-01-01T12:00:00Z' };
+
   return (
     <div>
       <h1>Community Forum</h1>
-      {/* Render ForumPostList component */}
-      <ForumPostList posts={posts} />
+      <nav>
+        <ul>
+          <li><Link to="/forum/posts">Forum Posts</Link></li>
+          <li><Link to="/forum/comments">Comments</Link></li>
+          <li><Link to="/forum/profile">User Profile</Link></li>
+        </ul>
+      </nav>
 
-      {/* Render individual ForumPost component */}
-      {posts.map(post => (
-        <ForumPost key={post.id} post={post} />
-      ))}
-
-      {/* Render CommentList component */}
-      <CommentList comments={comments} />
-
-      {/* Render UserProfile component */}
-      <UserProfile user={userProfile} />
-
-      {/* Render individual Comment component */}
-      {comments.map(comment => (
-        <Comment key={comment.id} comment={comment} />
-      ))}
+      <Routes>
+        <Route path="/" element={<h2>Welcome to the Community Forum</h2>} />
+        <Route path="posts" element={<ForumPostList posts={posts} />} />
+        <Route path="post/:id" element={<ForumPost posts={posts} />} />
+        <Route path="comments" element={<CommentList comments={comments} />} />
+        <Route path="comment/:id" element={<Comment comments={comments} />} />
+        <Route path="profile" element={<UserProfile user={userProfile} />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default CommunityForum;
